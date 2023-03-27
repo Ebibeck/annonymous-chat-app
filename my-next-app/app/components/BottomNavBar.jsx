@@ -5,10 +5,10 @@ import {TbSettingsFilled} from 'react-icons/tb'
 export default function NavlinkBar() {
   return (
     <nav className='flex bg-gray-800 h-full w-full sm:px-2 items-center justify-center'>
-      <div className='flex space-x-6'>
-        <Navlink href='/'>{<MdHome/>}Home</Navlink>
-        <Navlink href='#'>{<MdMessage/>}Inbox</Navlink>
-        <Navlink href='#'>{<TbSettingsFilled/>}Settings</Navlink>
+      <div className='flex space-x-10'>
+        <Navlink href='/'>{<MdHome className='h-5 w-5 '/>}<span className='font-medium'>Home</span></Navlink>
+        <Navlink href='/inbox'>{<MdMessage className='h-5 w-5 '/>}<span className='font-medium'>Inbox</span></Navlink>
+        <Navlink href='/settings'>{<TbSettingsFilled className='h-5 w-5 '/>}<span className='font-medium'>Settings</span></Navlink>
       </div>
     </nav>
   );

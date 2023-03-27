@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useSelectedLayoutSegments } from "next/navigation";
 
-export default function Navlink({ href, children}) {
+export default function Navlink({ href, children }) {
   const segment = useSelectedLayoutSegments();
   const active = href === `/${segment}`;
   return (
