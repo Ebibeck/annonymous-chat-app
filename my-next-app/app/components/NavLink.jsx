@@ -8,9 +8,8 @@ export default function Navlink({ href, children }) {
   return (
     <Link
       className={
-        active
-          ? "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
-          : "px-3 py-2 rounded-md text-sm font-medium text-gray-100 hover:text-white hover:bg-gray-500 focus:outline-none"
+        active ? "px-3 py-2 rounded-md text-sm font-medium text-gray-100 hover:text-white hover:bg-gray-500 focus:outline-none" 
+          : "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
       }
       href={href}
     >
