@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBKbAjl46AAoUdNK_aVnw6-Ao-Q6HdYEFc",
-  authDomain: "annonymous-chat-app.firebaseapp.com",
-  projectId: "annonymous-chat-app",
-  storageBucket: "annonymous-chat-app.appspot.com",
-  messagingSenderId: "430218965868",
-  appId: "1:430218965868:web:dba30433265be2300ef949",
-  measurementId: "G-EEE0M81Z8K"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 // Initialize Firebase
