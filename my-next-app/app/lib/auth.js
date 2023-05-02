@@ -1,12 +1,11 @@
 import { FirestoreAdapter } from "@next-auth/firebase-adapter";
-import { NextAuthOptions } from "next-auth"
 import EmailProvider from "next-auth/providers/email"
 import GoogleProvider from "next-auth/providers/google";
 import { firestore } from "./firestore";
 
 
 
-export const authOptions: NextAuthOptions = {
+export const AuthOptions = {
     adapter: FirestoreAdapter(firestore),
     session: {
         strategy: "jwt",
