@@ -1,4 +1,4 @@
-export default function Settingspage(){
+export default function SettingsPage(){
     return(
         <div>
             

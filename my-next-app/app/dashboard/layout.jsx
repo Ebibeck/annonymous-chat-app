@@ -1,6 +1,6 @@
 import NavBar from '../components/BottomNavBar';
 
-export default function RootLayout({ children }) {
+export default function DashboardLayout({ children }) {
     return (
           <div className='w-screen h-screen flex flex-col'>
             <div className=' flex w-full h-full'>{children}</div>

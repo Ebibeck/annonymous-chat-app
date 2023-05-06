@@ -1,4 +1,4 @@
-export default function Inboxpage(){
+export default function InboxPage(){
     return(
         <div>
             

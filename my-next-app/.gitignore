@@ -33,6 +33,3 @@ yarn-error.log*
 
 # firebase 
 annonymous-chat-app-firebase-adminsdk-jzcu4-b31ff267a9.json
-
-#firebase config
-service_account.js
