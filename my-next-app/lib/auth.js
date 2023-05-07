@@ -1,5 +1,5 @@
 import { FirestoreAdapter } from "@next-auth/firebase-adapter";
-import EmailProvider from "next-auth/providers/email"
+import EmailProvider from "next-auth/providers/email";
 import GoogleProvider from "next-auth/providers/google";
 import { firestore } from "./firestore";
 
@@ -11,6 +11,7 @@ export const AuthOptions = {
     pages: {
         signIn: "/auth/login",
     },
+    secret: process.env.NEXTAUTH_SECRET,
     providers: [ 
         EmailProvider({
           server: process.env.EMAIL_SERVER,
