@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
+import Link from "next/link";
 
 export default function SignInForm() {
   return (
@@ -30,18 +31,26 @@ export default function SignInForm() {
           />
           <Button className="w-full">Sign In with Email</Button>
           <p className="text-sm text-muted-foreground">~ OR CONTINUE WITH ~</p>
-          <Button variant="outline" className="w-full font-semibold gap-x-1 mt-3">
-            <Image
-              width={13}
-              height={13}
-              src={'google.svg'}
-              alt=""
-             />
+          <Button
+            variant="outline"
+            className="w-full font-semibold gap-x-1 mt-3 bg-gray-100"
+          >
+            <Image width={13} height={13} src={"google.svg"} alt="" />
             <span>Google</span>
           </Button>
         </form>
       </CardContent>
       <CardFooter>
+        <p className="text-center">
+          By clicking continue, you agree to our 
+          <Link href={"#"} className="underline">
+            Terms of Service
+          </Link>
+          and
+          <Link href={"#"} className="underline"> 
+           Privacy Policy.
+          </Link>
+        </p>
       </CardFooter>
     </Card>
   );
