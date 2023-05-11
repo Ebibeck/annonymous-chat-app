@@ -4,12 +4,12 @@ import GoogleProvider from "next-auth/providers/google";
 import { firestore } from "./firestore";
 
 export const AuthOptions = {
-    adapter: FirestoreAdapter(firestore),
+    adapter: FirestoreAdapter({firestore}),
     session: {
         strategy: "jwt",
     },
     pages: {
-        signIn: "/auth/login",
+        signIn: "/login",
     },
     secret: process.env.NEXTAUTH_SECRET,
     providers: [ 
