@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import { Button } from "../../components/ui/button";
 import {
@@ -10,8 +11,19 @@ import {
 } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
+import { useForm } from "react-hook-form"
 
 export default function SignInForm() {
+  const {handleSubmit,register} = useForm()
+  const [email,setEmail] = useState('')
+  const Email = async () =>{
+    const signInResult = await signIn('email',{
+      email: email,
+      redirect: false,
+    })
+  }
   return (
     <Card className="flex flex-col items-center w-96 h-auto gap-y-1">
       <CardHeader className="flex flex-col items-center gap-y-1">
@@ -23,15 +35,19 @@ export default function SignInForm() {
         </CardDescription>
       </CardHeader>
       <CardContent className="w-full">
-        <form className="flex flex-col w-full items-center gap-y-3">
+        <form onSubmit={handleSubmit(Email)} className="flex flex-col w-full items-center gap-y-3">
           <Input
             type="email"
+            {...register("email")}
+            autoComplete="email"
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="name@gmail.com"
             className="h-10 font-normal"
           />
-          <Button className="w-full">Sign In with Email</Button>
+          <Button type="submit" className="w-full">Sign In with Email</Button>
           <p className="text-sm text-muted-foreground">~ OR CONTINUE WITH ~</p>
           <Button
+            onClick={(e) =>{signIn('google'),e.preventDefault()}}
             variant="outline"
             className="w-full font-semibold gap-x-1 mt-3 bg-gray-100"
           >
@@ -43,11 +59,11 @@ export default function SignInForm() {
       <CardFooter>
         <p className="text-center">
           By clicking continue, you agree to our 
-          <Link href={"#"} className="underline">
+          <Link href={"#"} className="underline mx-1">
             Terms of Service
           </Link>
-          and
-          <Link href={"#"} className="underline"> 
+           and  
+          <Link href={"#"} className="underline mx-1"> 
            Privacy Policy.
           </Link>
         </p>
